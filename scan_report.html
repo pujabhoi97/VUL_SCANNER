@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vulnerability Scan Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .section {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff;
+      border-left: 5px solid #3498db;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    .green { color: green; }
+    .red { color: red; }
+  </style>
+</head>
+<body>
+
+  <h1>Vulnerability Scan Report</h1>
+  <p><strong>Scanned Target:</strong> http://testphp.vulnweb.com</p>
+  <p><strong>Scan Time:</strong> 2025-06-22 14:30:00</p>
+
+  <div class="section">
+    <h2>Open Ports</h2>
+    <ul>
+      <li>✅ Port 80 is OPEN</li>
+      <li>❌ Port 22 is CLOSED</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Missing Security Headers</h2>
+    <ul>
+      <li class="red">❌ Content-Security-Policy is missing</li>
+      <li class="red">❌ X-Frame-Options is missing</li>
+      <li class="green">✅ X-Content-Type-Options is present</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Potential Vulnerabilities (CVE)</h2>
+    <ul>
+      <li>Apache/2.4.49 → CVE-2021-41773 (Path Traversal)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Directory Listing</h2>
+    <ul>
+      <li class="red">✅ Enabled — may expose sensitive files!</li>
+    </ul>
+  </div>
+
+</body>
+</html>
